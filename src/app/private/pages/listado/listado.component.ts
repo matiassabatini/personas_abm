@@ -37,7 +37,6 @@ export class ListadoComponent implements OnInit {
       showCancelButton: true,
       confirmButtonText: 'Confirmar',
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire(
           personaAeliminar?.nombre +

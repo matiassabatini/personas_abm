@@ -16,7 +16,6 @@ export class AuthService {
     this.loginAuth = User;
     const isAuthenticated: boolean =
       this.loginAuth.username === 'admin' && this.loginAuth.password === '1234';
-    //si el usuario ingresado coincide va a ser true
 
     this.isAuthenticatedSubject.next(isAuthenticated);
     this.authenticator = isAuthenticated;
