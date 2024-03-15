@@ -1,0 +1,43 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aliceblue;
+  position: relative;
+}
+
+.div-img {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 3rem;
+  width: 20%;
+  background-color: rgba(225, 225, 225, 0.305);
+}
+.sombra {
+  padding: 20px; /* Puedes ajustar según tus necesidades */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.196); /* Aquí defines el sombreado */
+}
+.alinear {
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.btn {
+  width: 100%;
+}
+.swal2-container {
+  z-index: 9999;
+}
+
+.swal2-popup {
+  margin-top: -100px;
+}

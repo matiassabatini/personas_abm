@@ -1,0 +1,29 @@
+section {
+  width: 100%;
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .container {
+    margin-top: 30px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .table-container {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+
+    table {
+      width: 100%;
+      .header-color {
+        background-color: rgba(252, 237, 214, 0.513);
+      }
+      .pointer {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<section class="nav">
+  <mat-toolbar color="primary">
+    <span>ABM Personas</span>
+    <span class="example-spacer"></span>
+    <div>
+      <button mat-button [routerLink]="'/listado'">Listado</button>
+      <button mat-button [routerLink]="'/nuevo'">Nuevo</button>
+      <button mat-mini-fab>
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+</section>
+<div class="contenedor-router">
+  <router-outlet></router-outlet>
+</div>

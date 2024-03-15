@@ -1,0 +1,51 @@
+<section>
+  <div class="container center">
+    <mat-toolbar>
+      <span class="material-icons"> account_circle </span>
+      <span>Nueva Persona</span>
+    </mat-toolbar>
+  </div>
+  <div class="center">
+    <mat-card>
+      <form [formGroup]="form" (ngSubmit)="addPersona()">
+        <mat-grid-list cols="2" rowHeight="70px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="nombre" />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <mat-label>Apellido</mat-label>
+              <input matInput formControlName="apellido" />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <mat-label>Edad</mat-label>
+              <input matInput formControlName="edad" />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <button
+              mat-stroked-button
+              color="primary"
+              style="margin-right: 5px"
+            >
+              Cancelar
+            </button>
+            <button
+              mat-raised-button
+              type="submit"
+              [disabled]="form.invalid"
+              color="primary"
+            >
+              Crear
+            </button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </mat-card>
+  </div>
+</section>
