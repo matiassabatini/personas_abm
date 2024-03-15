@@ -6,7 +6,7 @@
       </div>
       <span class="example-spacer"></span>
       <div>
-        <button mat-mini-fab [routerLink]="'/nuevo'">
+        <button mat-mini-fab [routerLink]="'/nuevo-editar'">
           <mat-icon>person_add</mat-icon>
         </button>
       </div>
@@ -81,7 +81,7 @@
           *matCellDef="let persona; let i = index"
           style="text-align: end"
         >
-          <a [routerLink]="" class="pointer">
+          <a [routerLink]="'/nuevo-editar/' + i" class="pointer">
             <mat-icon class="material-icons">create</mat-icon>
           </a>
           <a

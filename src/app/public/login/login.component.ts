@@ -12,7 +12,6 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  showError: boolean = false;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -33,9 +32,14 @@ export class LoginComponent implements OnInit {
       this.authService.getUserLogin(login);
       console.log(login);
       this.authRedirect();
-      this.showError = false;
-    } else {
-      this.showError = true;
+      console.log(this.authService.authenticator);
+      if (this.authService.authenticator == false) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Usuario o Contraseña Invalida.',
+          text: 'Por favor, inténtalo de nuevo.',
+        });
+      }
     }
   }
 
@@ -46,11 +50,6 @@ export class LoginComponent implements OnInit {
         this.authService.authenticator = true;
         this.router.navigate(['/']);
       } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Usuario o Contraseña Invalida.',
-          text: 'Por favor, inténtalo de nuevo.',
-        });
         console.log('Credenciales inválidas');
       }
     });

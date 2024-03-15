@@ -14,11 +14,11 @@ export const PrivateRoutes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'nuevo',
+    path: 'nuevo-editar',
     component: CrearEditarComponent,
   },
   {
-    path: 'editar/:id',
+    path: 'nuevo-editar/:id',
     component: CrearEditarComponent,
   },
 ];

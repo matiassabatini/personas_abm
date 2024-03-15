@@ -27,25 +27,41 @@
               <input matInput formControlName="edad" />
             </mat-form-field>
           </mat-grid-tile>
-          <mat-grid-tile>
-            <button
-              mat-stroked-button
-              color="primary"
-              style="margin-right: 5px"
-            >
-              Cancelar
-            </button>
-            <button
-              mat-raised-button
-              type="submit"
-              [disabled]="form.invalid"
-              color="primary"
-            >
-              Crear
-            </button>
-          </mat-grid-tile>
+          <mat-grid-tile> </mat-grid-tile>
         </mat-grid-list>
       </form>
+      <div style="display: flex; justify-content: end">
+        <div>
+          <button
+            (click)="resetForm()"
+            mat-stroked-button
+            color="primary"
+            style="margin-right: 5px"
+          >
+            Cancelar
+          </button>
+        </div>
+        <div *ngIf="!editando">
+          <button
+            mat-raised-button
+            (click)="addPersona()"
+            [disabled]="form.invalid"
+            color="primary"
+          >
+            Crear
+          </button>
+        </div>
+        <div *ngIf="editando">
+          <button
+            mat-raised-button
+            (click)="editPersonaIndex()"
+            [disabled]="form.invalid"
+            color="primary"
+          >
+            Editar
+          </button>
+        </div>
+      </div>
     </mat-card>
   </div>
 </section>

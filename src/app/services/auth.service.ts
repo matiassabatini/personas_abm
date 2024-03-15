@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/User.model';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ export class AuthService {
   loginAuth: User = new User();
   authenticator: boolean = false;
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
-  constructor() {}
+  constructor(private router: Router) {}
 
   getUserLogin(User: User): void {
     this.loginAuth = User;
@@ -18,6 +19,7 @@ export class AuthService {
     //si el usuario ingresado coincide va a ser true
 
     this.isAuthenticatedSubject.next(isAuthenticated);
+    this.authenticator = isAuthenticated;
   }
 
   isAuthenticated(): Observable<boolean> {
@@ -25,6 +27,7 @@ export class AuthService {
   }
 
   logout(): void {
+    this.router.navigate(['/login']);
     this.isAuthenticatedSubject.next(false);
   }
 }

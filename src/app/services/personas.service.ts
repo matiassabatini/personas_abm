@@ -51,4 +51,21 @@ export class PersonasService {
     this.personasList.push(nuevaPersona);
     this.listadoPersonasSubject.next([...this.personasList]);
   }
+
+  public getPersonaByIndex(index: number): Persona | null {
+    if (index >= 0 && index < this.personasList.length) {
+      return this.personasList[index];
+    } else {
+      return null;
+    }
+  }
+
+  public editPersonaByIndex(index: number, personaDto: PersonaDto): void {
+    if (index >= 0 && index < this.personasList.length) {
+      const persona: Persona = this.personasList[index];
+      const personaEditada: Persona = { ...persona, ...personaDto };
+      this.personasList[index] = personaEditada;
+      this.listadoPersonasSubject.next([...this.personasList]);
+    }
+  }
 }
